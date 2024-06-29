@@ -20,13 +20,6 @@ const PeopleProvider = ({ children }) => {
             "experience": 3
           },
           {
-            "id": 1,
-            "name": "Julinhos",
-            "specialties": ["Front-end", "React"],
-            "city": "São Paulo",
-            "experience": 3
-          },
-          {
             "id": 2,
             "name": "Ciclano Silva",
             "specialties": ["Back-end", "Node.js"],
