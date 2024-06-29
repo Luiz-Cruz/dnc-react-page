@@ -13,7 +13,7 @@ const InfoSection = () => {
     averageExperience: (people.reduce((acc, person) => acc + person.experience, 0) / people.length).toFixed(1),
     uniqueCities: [...new Set(people.flatMap(person => person.city))].length,
   }
-
+  
   const infoCards = [
     { title: 'Total de desenvolvedores', value: totalPeople },
     { title: 'Média de especialidades', value: averageSpecialties },

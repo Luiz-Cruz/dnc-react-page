@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import usePeople from '../contexts/peopleContext';
+import React, { useState, useEffect } from 'react';
 import { Grid, Paper, Typography, Divider, TextField } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import InfoSection from '@/components/infoSection';
+import usePeople from '@/contexts/peopleContext';
 
 const Pessoas = () => {
   const { people } = usePeople();

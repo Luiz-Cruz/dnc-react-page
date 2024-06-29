@@ -1,14 +1,34 @@
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { TextField, Button, Paper, Typography, Grid, MenuItem } from '@mui/material';
-import usePeople, { possibleSpecialties } from '@/contexts/peopleContext';
+import { useState, useEffect } from 'react';
+import usePeople from '@/contexts/peopleContext';
 import useDialog from '@/contexts/dialogContext';
 
 const Cadastro = () => {
   const { handleSubmit, control, reset } = useForm();
   const { people, setPeople } = usePeople();
   const {openDialog} = useDialog();
+  const [possibleSpecialties, setPossibleSpecialties] = useState([]);
 
+  useEffect(() => {
+    const fetchSpecialties = async () => {
+      try {
+        // const response = await fetch('http://localhost:8080/especialidades');
+        // const data = await response.json();
+        const data = [
+          'React', 'Vue', 'Angular', 'Node', 'Python', 'Java', 'C#', 'Ruby', 'PHP', 'SQL', 
+          'NoSQL', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'Google Cloud', 'Firebase', 
+          'MongoDB', 'PostgreSQL', 'MySQL', 'SQLite', 'MariaDB'
+        ];
+        setPossibleSpecialties(data);
+      } catch (error) {
+        console.error('Erro ao obter as especialidades:', error);
+      }
+    };
+
+    fetchSpecialties();
+  }, []);
   const handleAddDeveloper = (data) => {
     openDialog({
       title: 'Tem certeza que deseja cadastrar ' + data.name + '?',
