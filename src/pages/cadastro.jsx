@@ -14,13 +14,13 @@ const Cadastro = () => {
   useEffect(() => {
     const fetchSpecialities = async () => {
       try {
-        // const response = await fetch('http://localhost:8080/especialidades');
-        // const data = await response.json();
-        const data = [
-          'React', 'Vue', 'Angular', 'Node', 'Python', 'Java', 'C#', 'Ruby', 'PHP', 'SQL', 
-          'NoSQL', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'Google Cloud', 'Firebase', 
-          'MongoDB', 'PostgreSQL', 'MySQL', 'SQLite', 'MariaDB'
-        ];
+        const response = await fetch('http://localhost:8080/especialidades');
+        const data = await response.json();
+        // const data = [
+        //   'React', 'Vue', 'Angular', 'Node', 'Python', 'Java', 'C#', 'Ruby', 'PHP', 'SQL', 
+        //   'NoSQL', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'Google Cloud', 'Firebase', 
+        //   'MongoDB', 'PostgreSQL', 'MySQL', 'SQLite', 'MariaDB', "C++", "C", "Rust", "Swift",
+        // ];
         setPossibleSpecialities(data);
       } catch (error) {
         console.error('Erro ao obter as especialidades:', error);

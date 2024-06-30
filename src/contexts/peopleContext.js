@@ -9,31 +9,8 @@ const PeopleProvider = ({ children }) => {
   useEffect(() => {
     const fetchPeopleData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/pessoas');
+        const response = await fetch('http://localhost:8080/pessoas'); 
         const data = await response.json();
-        // const data = [
-        //   {
-        //     "id": 1,
-        //     "name": "Julinhos",
-        //     "specialities": ["Front-end"],
-        //     "city": "São Paulo",
-        //     "experience": 3
-        //   },
-        //   {
-        //     "id": 2,
-        //     "name": "Ciclano Silva",
-        //     "specialities": ["Back-end"],
-        //     "city": "Rio de Janeiro",
-        //     "experience": 59
-        //   },
-        //   {
-        //     "id": 3,
-        //     "name": "Karen Oliveira",
-        //     "specialities": ["Mobile"],
-        //     "city": "Belo Horizonte",
-        //     "experience": 10
-        //   }
-        // ];
         setPeople(data);
         setCurrentUser(data[0]); // Definindo o primeiro usuário como o usuário atual
       } catch (error) {
