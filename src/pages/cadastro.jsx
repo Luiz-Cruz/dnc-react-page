@@ -9,10 +9,10 @@ const Cadastro = () => {
   const { handleSubmit, control, reset } = useForm();
   const { people, setPeople } = usePeople();
   const {openDialog} = useDialog();
-  const [possibleSpecialties, setPossibleSpecialties] = useState([]);
+  const [possibleSpecialities, setPossibleSpecialities] = useState([]);
 
   useEffect(() => {
-    const fetchSpecialties = async () => {
+    const fetchSpecialities = async () => {
       try {
         // const response = await fetch('http://localhost:8080/especialidades');
         // const data = await response.json();
@@ -21,13 +21,13 @@ const Cadastro = () => {
           'NoSQL', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'Google Cloud', 'Firebase', 
           'MongoDB', 'PostgreSQL', 'MySQL', 'SQLite', 'MariaDB'
         ];
-        setPossibleSpecialties(data);
+        setPossibleSpecialities(data);
       } catch (error) {
         console.error('Erro ao obter as especialidades:', error);
       }
     };
 
-    fetchSpecialties();
+    fetchSpecialities();
   }, []);
   const handleAddDeveloper = (data) => {
     openDialog({
@@ -83,7 +83,7 @@ const Cadastro = () => {
           {/* Campo: Especialidades */}
           <Grid item xs={12}>
             <Controller
-              name="specialties"
+              name="specialities"
               control={control}
               defaultValue={[]}
               render={({ field }) => (
@@ -96,7 +96,7 @@ const Cadastro = () => {
                   required
                   SelectProps={{ multiple: true }}
                 >
-                  {possibleSpecialties.map((option) => (
+                  {possibleSpecialities.map((option) => (
                     <MenuItem key={option} value={option}>
                       {option}
                     </MenuItem>

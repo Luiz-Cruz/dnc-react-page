@@ -7,16 +7,16 @@ import usePeople from '@/contexts/peopleContext';
 const InfoSection = () => {
   const { people } = usePeople();
 
-  const { totalPeople, averageSpecialties, averageExperience, uniqueCities } = {
+  const { totalPeople, averageSpecialities, averageExperience, uniqueCities } = {
     totalPeople: people.length,
-    averageSpecialties: (people.reduce((acc, person) => acc + person.specialties.length, 0) / people.length).toFixed(1),
+    averageSpecialities: (people.reduce((acc, person) => acc + person.specialities.length, 0) / people.length).toFixed(1),
     averageExperience: (people.reduce((acc, person) => acc + person.experience, 0) / people.length).toFixed(1),
     uniqueCities: [...new Set(people.flatMap(person => person.city))].length,
   }
   
   const infoCards = [
     { title: 'Total de desenvolvedores', value: totalPeople },
-    { title: 'Média de especialidades', value: averageSpecialties },
+    { title: 'Média de especialidades', value: averageSpecialities },
     { title: 'Experiência média (anos)', value: averageExperience },
     { title: 'Total de cidades', value: uniqueCities },
   ];

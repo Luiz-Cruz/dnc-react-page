@@ -10,7 +10,7 @@ const Pessoas = () => {
 
   const columns = [
     { field: 'name', headerName: 'Nome', flex: 2, minWidth: 200 },
-    { field: 'specialties', headerName: 'Especialidades', flex: 2, minWidth: 200 },
+    { field: 'specialities', headerName: 'Especialidades', flex: 2, minWidth: 200 },
     { field: 'city', headerName: 'Cidade', flex: 1, minWidth: 150},
     { field: 'experience', headerName: 'Experiência', maxWidth: 150, minWidth: 100 },
   ];
@@ -18,7 +18,7 @@ const Pessoas = () => {
   const filteredPeople = people.filter(person =>
     person.name.toLowerCase().includes(searchText.toLowerCase()) ||
     person.city.toLowerCase().includes(searchText.toLowerCase()) ||
-    person.specialties.some(specialty => specialty.toLowerCase().includes(searchText.toLowerCase()))
+    person.specialities.some(specialty => specialty.toLowerCase().includes(searchText.toLowerCase()))
   );
 
   return (

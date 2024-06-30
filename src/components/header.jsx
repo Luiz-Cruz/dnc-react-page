@@ -18,7 +18,7 @@ function NavBar() {
     { title: 'Dashboard', onClick: () => router.push('/') },
     { title: 'Cadastro', onClick: () => router.push('/cadastro') },
     { title: 'Pessoas', onClick: () => router.push('/pessoas') },
-    { title: 'Especialidades', onClick: () => router.push('/especialidades')}
+    { title: 'Cadastro Especialidades', onClick: () => router.push('/especialidades')}
   ];
 
   return (

@@ -38,7 +38,7 @@ const ChartsSection = () => {
   }, [people]);
 
   const specialtyData = useMemo(() => {
-    const counts = people.flatMap(person => person.specialties)
+    const counts = people.flatMap(person => person.specialities)
       .reduce((acc, specialty) => {
         acc[specialty] = (acc[specialty] || 0) + 1;
         return acc;
